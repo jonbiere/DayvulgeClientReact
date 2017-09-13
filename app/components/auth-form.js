@@ -25,13 +25,22 @@ const AuthForm = (props) => {
         </div>
         <br />
         <div>
-          <h5> Or log in with your Google account</h5>
+          <h5> Or log in with one of these guys</h5>
           <Button
             className="submit-button-form"
             waves='light'
             node='a'
             href='/auth/google'>
-            Login with Google
+            Google
+          </Button>
+          <br />
+          <Button
+            className="submit-button-form"
+            waves='light'
+            node='a'
+            disabled={true}
+            href='/auth/facebook'>
+            Facebook
           </Button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
