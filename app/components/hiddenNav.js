@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
 import { SideNav, Button, SideNavItem } from 'react-materialize';
 
 /**
  * COMPONENT
  */
-export const UserHome = (props) => {
+export const HiddenNav = (props) => {
   const { email } = props
 
   return (
@@ -22,22 +20,4 @@ export const UserHome = (props) => {
 
 
   )
-}
-
-/**
- * CONTAINER
- */
-const mapState = (state) => {
-  return {
-    email: state.user.email
-  }
-}
-
-export default connect(mapState)(UserHome)
-
-/**
- * PROP TYPES
- */
-UserHome.propTypes = {
-  email: PropTypes.string
 }

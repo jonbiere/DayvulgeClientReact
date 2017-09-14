@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../reducers/user'
-
+import { Navbar, NavItem, Icon, Button } from 'react-materialize';
 
 /**
  * COMPONENT
@@ -16,13 +16,16 @@ const Main = (props) => {
 
   return (
     <div>
-      <nav>
+      <Navbar brand="logo" right>
         {
           isLoggedIn
-            ? <div>
+            ?
+            <div className="loggedin-nav-btns">
               {/* The navbar will show these links after you log in */}
-              <Link to='/home'>Home</Link>
-              <a href='#' onClick={handleClick}>Logout</a>
+              <NavItem><Icon>move_to_inbox</Icon></NavItem>
+              <NavItem><Icon>view_module</Icon></NavItem>
+              <NavItem onClick={handleClick}><Icon>refresh</Icon></NavItem>
+              <NavItem><Icon>more_vert</Icon></NavItem>
             </div>
             : <div className="login-signup">
               {/* The navbar will show these links before you log in */}
@@ -35,7 +38,7 @@ const Main = (props) => {
               </div>
             </div>
         }
-      </nav>
+      </Navbar>
       {children}
     </div>
   )
