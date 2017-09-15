@@ -32,10 +32,11 @@ const Main = (props) => {
               <div className="login-button">
                 <Link to='/login'>Login</Link>
               </div>
-               <h5 className="or">OR</h5>
+               <h5 className="or">OR!</h5>
               <div className="signup-button">
                 <Link to='/signup'>Sign Up</Link>
               </div>
+              
             </div>
         }
       </Navbar>

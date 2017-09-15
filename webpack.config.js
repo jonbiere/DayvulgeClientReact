@@ -1,19 +1,40 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-  entry: './app/main.jsx', // assumes your entry point is the index.js in the root of your project folder
+  entry: [
+    // activate HMR for React
+    'react-hot-loader/patch',
+    
+    // bundle the client for webpack-dev-server
+    // and connect to the provided endpoint
+    'webpack-dev-server/client?http://localhost:3000',
+    
+    // bundle the client for hot reloading
+    // only- means to only hot reload for successful updates
+    'webpack/hot/only-dev-server',
+   
+     // the entry point of our app
+    './app/main.jsx',
+   
+  ],
+
   output: {
-    path: __dirname,
-    filename: './public/bundle.js' // assumes your bundle.js will also be in the root of your project folder
+    filename: 'bundle.js',
+    // the output bundle
+    path: path.resolve(__dirname, 'public'),
+    // necessary for HMR to know where to load the hot update chunks
+    publicPath: 'http://localhost:3000/'
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['react', 'es2015', 'react-hmre'] // if you aren't using 'babel-preset-es2015', then omit the 'es2015'
-        }
+        use: [
+          'babel-loader',
+        ],
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -23,7 +44,23 @@ module.exports = {
           'sass-loader'
         ]
       }
-    ]
+    ],
+  },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    // enable HMR globally
+
+    new webpack.NamedModulesPlugin(),
+    // prints more readable module names in the browser console on HMR updates
+  ],
+
+  devServer: {
+    host: 'localhost',
+    port: 3000,
+    hot: true,
+    contentBase: path.resolve(__dirname, 'public'),
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx']

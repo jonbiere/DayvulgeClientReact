@@ -7,7 +7,7 @@ import { SideNav, Button, SideNavItem } from 'react-materialize';
  * COMPONENT
  */
 export const UserHome = (props) => {
-  const { email } = props
+  const { email, vulges } = props
 
   return (
     <SideNav
@@ -21,6 +21,8 @@ export const UserHome = (props) => {
     </SideNav>
 
 
+
+
   )
 }
 
@@ -29,7 +31,8 @@ export const UserHome = (props) => {
  */
 const mapState = (state) => {
   return {
-    email: state.user.email
+    email: state.user.email,
+    vulges: state.vulges
   }
 }
 
