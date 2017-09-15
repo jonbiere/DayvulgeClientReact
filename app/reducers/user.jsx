@@ -1,5 +1,6 @@
 import axios from 'axios'
 import history from '../history'
+import {BaseApiUrl} from '../constants'
 
 /**
  * ACTION TYPES
@@ -22,15 +23,15 @@ const removeUser = () => ({type: REMOVE_USER})
  * THUNK CREATORS
  */
 export const me = () =>
-  dispatch =>
-    axios.get('/auth/me')
+  (dispatch) =>
+    axios.get(`${BaseApiUrl}/auth/me`)
       .then(res =>
         dispatch(getUser(res.data || defaultUser)))
       .catch(err => console.log(err))
 
 export const auth = (name, email, password, method) =>
-  dispatch =>
-    axios.post(`/auth/${method}`, { name, email, password })
+  (dispatch) =>
+    axios.post(`${BaseApiUrl}/auth/${method}`, { name, email, password })
       .then(res => {
         dispatch(getUser(res.data))
         history.push('/home')
@@ -39,8 +40,8 @@ export const auth = (name, email, password, method) =>
         dispatch(getUser({error})))
 
 export const logout = () =>
-  dispatch =>
-    axios.post('/auth/logout')
+  (dispatch) =>
+    axios.post(`${BaseApiUrl}/auth/logout`)
       .then(res => {
         dispatch(removeUser())
         history.push('/login')

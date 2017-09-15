@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../reducers/user'
 import { Row, Input, Icon, Button } from 'react-materialize'
-
+import {BaseApiUrl} from '../constants';
 /**
  * COMPONENT
  */
@@ -30,7 +30,7 @@ const AuthForm = (props) => {
             className="submit-button-form"
             waves='light'
             node='a'
-            href='/auth/google'>
+            href={`${BaseApiUrl}/auth/google`}>
             Google
           </Button>
           <br />
@@ -39,7 +39,7 @@ const AuthForm = (props) => {
             waves='light'
             node='a'
             disabled={true}
-            href='/auth/facebook'>
+            href={`${BaseApiUrl}/auth/facebook`}>
             Facebook
           </Button>
         </div>
