@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Router} from 'react-router'
-import {Route, Switch} from 'react-router-dom'
-import PropTypes from 'prop-types'
-import history from './history'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import PropTypes from 'prop-types';
 import {Main, Login, Signup, UserHome} from './components'
 import {me} from './reducers/user'
 
@@ -19,25 +17,25 @@ class Routes extends Component {
     const {isLoggedIn} = this.props
 
     return (
-      <Router history={history}>
+      <BrowserRouter>
         <Main>
           <Switch>
             {/* Routes placed here are available to all visitors */}
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
             {
               isLoggedIn &&
                 <Switch>
                   {/* Routes placed here are only available after logging in */}
-                  <Route path='/home' component={UserHome} />
+                  <Route exact path='/home' component={UserHome} />
                   {/* <Route path="" component={} /> */}
                 </Switch>
             }
             {/* Displays our Login component as a fallback */}
-            <Route component={Login} />
+            
           </Switch>
         </Main>
-      </Router>
+      </BrowserRouter>
     )
   }
 }

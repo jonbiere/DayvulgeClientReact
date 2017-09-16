@@ -8,10 +8,17 @@ import Routes from './routes'
 //import './socket'
 
 
-ReactDOM.render(
+const renderApp = () => ReactDOM.render(
   <Provider store={store}>
     <Routes />
   </Provider>,
   document.getElementById('app')
 );
 
+
+// This is needed for Hot Module Replacement
+if (module.hot) {
+  module.hot.accept('./routes', () => renderApp());
+}
+
+renderApp();
