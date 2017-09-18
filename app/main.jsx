@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import '../public/index.scss'
 import Routes from './routes'
 
-import './socket'
+//import './socket'
 
 
 ReactDOM.render(
