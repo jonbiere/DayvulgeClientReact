@@ -1,6 +1,5 @@
-import axios from 'axios'
-import history from '../history'
-import {BaseApiUrl} from '../constants'
+import axios from 'axios';
+import {BaseApiUrl} from '../constants';
 
 /**
  * ACTION TYPES
@@ -34,7 +33,7 @@ export const auth = (name, email, password, method) =>
     axios.post(`${BaseApiUrl}/auth/${method}`, { name, email, password })
       .then(res => {
         dispatch(getUser(res.data))
-        history.push('/home')
+        //history.push('/home')
       })
       .catch(error =>
         dispatch(getUser({error})))
@@ -44,7 +43,7 @@ export const logout = () =>
     axios.post(`${BaseApiUrl}/auth/logout`)
       .then(res => {
         dispatch(removeUser())
-        history.push('/login')
+        //history.push('/login')
       })
       .catch(err => console.log(err))
 

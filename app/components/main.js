@@ -36,6 +36,7 @@ const Main = (props) => {
               <div className="signup-button">
                 <Link to='/signup'>Sign Up</Link>
               </div>
+              
             </div>
         }
       </Navbar>
