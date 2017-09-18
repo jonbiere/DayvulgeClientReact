@@ -15,10 +15,4 @@ const renderApp = () => ReactDOM.render(
   document.getElementById('app')
 );
 
-
-// This is needed for Hot Module Replacement
-if (module.hot) {
-  module.hot.accept('./routes', () => renderApp());
-}
-
 renderApp();

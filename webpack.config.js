@@ -15,7 +15,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
    
      // the entry point of our app
-    './app/root.jsx',
+    './app/root.js',
    
   ],
 
@@ -24,7 +24,7 @@ module.exports = {
     // the output bundle
     path: path.resolve(__dirname, 'public'),
     // necessary for HMR to know where to load the hot update chunks
-    publicPath: '/'
+    publicPath: 'http://localhost:3000/'
   },
   devtool: 'inline-source-map',
   module: {
@@ -58,6 +58,9 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 3000,
+    historyApiFallback: {
+      index: 'index.html'
+    },
     hot: true,
     contentBase: path.resolve(__dirname, 'public'),
     publicPath: '/'

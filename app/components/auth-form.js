@@ -25,7 +25,7 @@ const AuthForm = (props) => {
         </div>
         <br />
         <div>
-          <h5> Or log in with one of these guys!</h5>
+          <h5> Or log in with one of these guys</h5>
           <Button
             className="submit-button-form"
             waves='light'
