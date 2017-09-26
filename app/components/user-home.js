@@ -20,12 +20,6 @@ export const UserHome = (props) => {
       <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
     </SideNav>
 
-<<<<<<< HEAD:app/components/user-home.jsx
-=======
-
-
-
->>>>>>> 5cddee5d1ae9219159267682d651131a84b2fafa:app/components/user-home.js
   )
 }
 
