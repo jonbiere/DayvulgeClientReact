@@ -12,7 +12,7 @@ import { Navbar, NavItem, Icon, Button } from 'react-materialize';
  *  rendered out by the component's `children`.
  */
 const Main = (props) => {
-  const {children, handleClick, isLoggedIn} = props
+  const {children, logout, isLoggedIn} = props
 
   return (
     <div>
@@ -24,7 +24,7 @@ const Main = (props) => {
               {/* The navbar will show these links after you log in */}
               <NavItem><Icon>move_to_inbox</Icon></NavItem>
               <NavItem><Icon>view_module</Icon></NavItem>
-              <NavItem onClick={handleClick}><Icon>refresh</Icon></NavItem>
+              <NavItem onClick={logout}><Icon>refresh</Icon></NavItem>
               <NavItem><Icon>more_vert</Icon></NavItem>
             </div>
             : <div className="login-signup">
@@ -56,7 +56,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    handleClick () {
+    logout: ()=>{
       dispatch(logout())
     }
   }
@@ -71,6 +71,6 @@ export default withRouter(connect(mapState, mapDispatch)(Main))
  */
 Main.propTypes = {
   children: PropTypes.object,
-  handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
+  logout: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
 }

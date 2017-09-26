@@ -8,7 +8,7 @@ import {BaseApiUrl} from '../constants';
  * COMPONENT
  */
 const AuthForm = (props) => {
-  const {name, displayName, handleSubmit, error} = props
+  const {name, displayName, handleSubmit, error} = props;
 
   return (
     <div className="welcome-log-in">
@@ -38,7 +38,6 @@ const AuthForm = (props) => {
             className="submit-button-form"
             waves='light'
             node='a'
-            disabled={true}
             href={`${BaseApiUrl}/auth/facebook`}>
             Facebook
           </Button>

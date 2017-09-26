@@ -1,2 +1,3 @@
-export const BaseApiUrl = 'https://dev-dayvulge-api.herokuapp.com'; //'http://localhost:3001'; 
+//export const BaseApiUrl = 'https://dev-dayvulge-api.herokuapp.com';
+export const BaseApiUrl = 'http://localhost:3001';
 
