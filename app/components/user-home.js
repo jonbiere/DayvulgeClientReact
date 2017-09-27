@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom'
+import { FlatButton } from 'material-ui'
 import { SideNav, Button, SideNavItem } from 'react-materialize';
 
 /**
@@ -14,8 +16,8 @@ export const UserHome = (props) => {
       <SideNav
         trigger={<Button><i className="material-icons">reorder</i></Button>}
         options={{ closeOnClick: true }}>
-        <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
-        <SideNavItem href='#!second'>Second Link</SideNavItem>
+        <SideNavItem href='#!icon' icon='home'>First Link With Icon</SideNavItem>
+        <SideNavItem href='/about'>Second Link</SideNavItem>
         <SideNavItem divider />
         <SideNavItem subheader>Subheader</SideNavItem>
         <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
@@ -29,7 +31,7 @@ export const UserHome = (props) => {
             return (
             <li className="timeline-item">
                 <div className="timeline-info">
-                    <span>{post.date || 'March 12, 2016'}</span>
+                    <span>{post.createdAt || 'March 12, 2016'}</span>
                 </div>
                 <div className="timeline-marker"></div>
 

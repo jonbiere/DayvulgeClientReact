@@ -23,7 +23,7 @@ const getVulgeHistory = (payload) => ({type: GET_VULGE_HISTORY, payload})
  */
 export const retrieveVulges = () =>
   (dispatch) =>
-    axios.get('https://dev-dayvulge-api.herokuapp.com/api/vulge/collection/1')
+    axios.get('https://dev-dayvulge-api.herokuapp.com/api/vulge/collection/2')
       .then(res =>{
         dispatch(getVulgeHistory(res.data || defaultHistory))
         console.log('response from data api', res.data)
