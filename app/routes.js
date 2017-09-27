@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Main, Login, Signup, UserHome} from './components';
 import {me} from './reducers/user';
+import { retrieveVulges } from './reducers/vulgeHistory';
 import history from './history';
 
 
@@ -33,7 +34,7 @@ class Routes extends Component {
                   {/* Routes placed here are only available after logging in */}
                   <Route path='/home' component={UserHome} />
                 </Switch>
-            }           
+            }
           </Switch>
         </Main>
       </Router>
@@ -56,6 +57,7 @@ const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
       dispatch(me())
+      dispatch(retrieveVulges())
     }
   }
 }

@@ -25,67 +25,34 @@ export const UserHome = (props) => {
     <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
       <ul className="timeline timeline-centered">
 
-        {/* single item */}
-        <li className="timeline-item">
-            <div className="timeline-info">
-                <span>March 12, 2016</span>
-            </div>
-            <div className="timeline-marker"></div>
+        {vulges.map(function(post){
+            return (
+            <li className="timeline-item">
+                <div className="timeline-info">
+                    <span>March 12, 2016</span>
+                </div>
+                <div className="timeline-marker"></div>
 
-            <div className="timeline-content">
-                <h5 className="timeline-title">Event Title</h5>
-                <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                    eu pede mollis pretium. Pellentesque ut neque.</p>
-            </div>
-        </li>
+                <div className="timeline-content">
+                    <h5 className="timeline-title">Event Title</h5>
+                    <p>{post.content}</p>
+                    <p>Up Votes: {post.upVotes}</p>
+                    <p>Down Votes: {post.downVotes}</p>
+                </div>
+            </li>
+            )
+        })}
 
-        {/* single item */}
-        <li className="timeline-item">
-            <div className="timeline-info">
-                <span>March 23, 2016</span>
-            </div>
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-                <h5 className="timeline-title">Event Title</h5>
-                <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                    eu pede mollis pretium. Pellentesque ut neque. </p>
-            </div>
-        </li>
+        {/* This 'timeline-item-period is for big BREAKS in timeline with large date. SAVE FOR IMPLEMENTING LATER! */}
 
-        {/* This 'timeline-item-period is for big breaks in timeline with large date */}
-        <li className="timeline-item period">
+        {/* <li className="timeline-item period">
             <div className="timeline-info"></div>
             <div className="timeline-marker"></div>
             <div className="timeline-content">
                 <h2 className="timeline-title">April 2016</h2>
             </div>
-        </li>
+        </li> */}
 
-        {/* single item */}
-        <li className="timeline-item">
-            <div className="timeline-info">
-                <span>April 02, 2016</span>
-            </div>
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-                <h5 className="timeline-title">Event Title</h5>
-                <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                    eu pede mollis pretium. Pellentesque ut neque. </p>
-            </div>
-        </li>
-
-        {/* single item */}
-        <li className="timeline-item">
-            <div className="timeline-info">
-                <span>April 28, 2016</span>
-            </div>
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-                <h5 className="timeline-title">Event Title</h5>
-                <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                    eu pede mollis pretium. Pellentesque ut neque. </p>
-            </div>
-        </li>
 
       </ul>
     </div>
@@ -101,9 +68,10 @@ export const UserHome = (props) => {
 const mapState = (state) => {
   return {
     email: state.user.email,
-    vulges: state.vulges
+    vulges: state.vulgeHistory
   }
 }
+
 
 export default connect(mapState)(UserHome)
 
