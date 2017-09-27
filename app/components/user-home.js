@@ -29,12 +29,12 @@ export const UserHome = (props) => {
             return (
             <li className="timeline-item">
                 <div className="timeline-info">
-                    <span>March 12, 2016</span>
+                    <span>{post.date || 'March 12, 2016'}</span>
                 </div>
                 <div className="timeline-marker"></div>
 
                 <div className="timeline-content">
-                    <h5 className="timeline-title">Event Title</h5>
+                    <h5 className="timeline-title">{post.title || 'Post Title'}</h5>
                     <p>{post.content}</p>
                     <p>Up Votes: {post.upVotes}</p>
                     <p>Down Votes: {post.downVotes}</p>
