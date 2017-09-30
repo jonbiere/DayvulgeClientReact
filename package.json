@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
     "build": "webpack",
-    "lint": "eslint app",
-    "seed": "node seed.js"
+    "lint": "eslint app"
   },
   "author": "jake regan",
   "license": "ISC",
@@ -18,8 +17,6 @@
     "body-parser": "^1.17.2",
     "connect-session-sequelize": "^4.1.0",
     "crypto": "0.0.3",
-    "eslint": "^3.14.1",
-    "eslint-plugin-react": "^6.9.0",
     "express": "^4.15.3",
     "express-session": "^1.15.5",
     "history": "^4.7.2",
@@ -58,6 +55,8 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0"
   }
 }
