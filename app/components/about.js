@@ -6,21 +6,76 @@ import { Button } from 'react-materialize';
 /**
  * COMPONENT
  */
-export const About = (props) => {
-  const { } = props
+export class About extends React.Component {
+  constructor(props){
+    super(props)
+    const { } = props
+  }
 
-  return (
+  render(){
+    return (
     <div>
-      <p>SAN JUAN, PUERTO RICO — Matt Lozon became trapped, marooned, stuck in a holding pattern at the international airport here. He slept every night on the floor in Terminal D, part of a horde of travelers hoping to score a precious ticket on a flight off the island. He lives in Idaho, which might as well be on a different planet.
+    <section id="carousel">
+      <div id="carousel-text">
+        <h1>Write your own History</h1>
+      </div>
+      <img class="carousel-image" src="images/img1.jpg" />
+      <img class="carousel-image" src="images/img2.jpg" />
+      <img class="carousel-image" src="images/img3.jpg" />
+      <img class="carousel-image" src="images/img4.jpg" />
+      <img class="carousel-image" src="images/img5.jpg" />
+      <img class="carousel-image" src="images/img6.jpg" />
+      <img class="carousel-image" src="images/img7.jpg" />
+      <img class="carousel-image" src="images/img8.jpg" />
+      <img class="carousel-image" src="images/img9.jpg" />
+      <img class="carousel-image" src="images/img10.jpg" />
+      <img class="carousel-image" src="images/img11.jpg" />
+      <img class="carousel-image" src="images/img12.jpg" />
+      <img class="carousel-image" src="images/img13.jpg" />
+      <img class="carousel-image" src="images/img14.jpg" />
+      <img class="carousel-image" src="images/img15.jpg" />
+      <img class="carousel-image" src="images/img16.jpg" />
+      <img class="carousel-image" src="images/img17.jpg" />
+      <img class="carousel-image" src="images/img18.jpg" />
+      <img class="carousel-image" src="images/img19.jpg" />
+      <img class="carousel-image" src="images/img20.jpg" />
+      <img class="carousel-image" src="images/img21.jpg" />
+      <img class="carousel-image" src="images/img22.jpg" />
+      <img class="carousel-image" src="images/img23.jpg" />
+      <img class="carousel-image" src="images/img24.jpg" />
+      <img class="carousel-image" src="images/img25.jpg" />
+      <img class="carousel-image" src="images/img26.jpg" />
+      <img class="carousel-image" src="images/img27.jpg" />
+    </section>
 
-      “I just feel like there’s no hope,” he said late Monday. “Why can’t we get out of here? Why won’t they get us out of here?”
+    <section id="about">
+      <h2>About</h2>
+      <div className="flex">
+        <p>
+        This is a space that was created on the premise that you should be able to write your own history.
 
-      Getting off Puerto Rico and other storm-ravaged Caribbean islands has been an exercise in frustration, often culminating in despair, rage, and another grim night in a sweltering airport with no air conditioning and the steady boil of angry voices.
+        History is an emergent property of the collective people. It’s the record and ledger where we note what has happened, what is important, and what should be remembered.
 
-      While travel within the U.S. territory remains perilous — with washed-out and debris-strewn roads and damaged bridges — airports are gradually reopening. But Hurricane Maria severely damaged the radar system in the island’s capital of San Juan, and, with limited air traffic control, there are safety concerns that limit the pace of arrivals and departures.
-      </p>
+        Sadly, the recording of history will never be perfect. There will always be bias. Even the simple recording of a single event, done as honestly as possible, inherently excludes all others. It’s limited in its scope.
+
+        However, for a majority of our time on this earth, history has been written by the few and the privileged. It was often written by the winners of wars and the powerful to manipulate the artifacts left to following generations.
+
+        And what can we know about those who came before us other than what was recorded?
+
+        Too often, the perception that our history is being written by others and that it is out of our control can lead us into apathy.
+
+        Writing history may never be perfect. But we believe when we can put that power into the hands of more people, that it will become better.
+
+        This is a place where you can write your own history and it it will live on.
+
+        This is your life. Decide what is important - what makes today worth remembering. And write your own history.
+        </p>
+      </div>
+    </section>
     </div>
-  )
+    )
+
+  }
 }
 
 /**
@@ -30,8 +85,6 @@ const mapState = (state) => {
   return {}
 }
 
-
-export default connect(mapState)(About)
 
 /**
  * PROP TYPES

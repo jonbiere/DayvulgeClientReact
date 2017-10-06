@@ -23,20 +23,20 @@ class Routes extends Component {
     return (
       <Router history={history}>
         <Main>
-          <Switch>
+          {/* <Switch> */}
             {/* Routes placed here are available to all visitors */}
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/' component={isLoggedIn ? UserHome:Login} />
-            {
-              isLoggedIn &&
-                <Switch>
+            {/* <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup} /> */}
+            {/* <Route path='/' component={isLoggedIn ? UserHome:Login} /> */}
+
+              {/* isLoggedIn && */}
+                {/* <Switch> */}
                   {/* Routes placed here are only available after logging in */}
-                  <Route exact path='/home' component={UserHome} />
+                  <Route exact path='/' component={UserHome} />
                   <Route exact path='/about' component={About} />
-                </Switch>
-            }
-          </Switch>
+                {/* </Switch> */}
+
+          {/* </Switch> */}
         </Main>
       </Router>
     )
