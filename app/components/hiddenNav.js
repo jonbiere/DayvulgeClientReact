@@ -1,5 +1,5 @@
 import React from 'react';
-import { SideNav, Button, SideNavItem } from 'react-materialize';
+import { SideNav, Button, SideNavItem, Icon } from 'react-materialize';
 
 /**
  * COMPONENT
@@ -9,15 +9,15 @@ export const HiddenNav = (props) => {
 
   return (
     <SideNav
-      trigger={<Button><i className="material-icons">reorder</i></Button>}
-      options={{ closeOnClick: true }}>
-      <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
-      <SideNavItem href='#!second'>Second Link</SideNavItem>
+      trigger={<Button>Menu</Button>}
+      options={{ closeOnClick: true, edge: 'right' }}>
+
+      <SideNavItem href='/' icon='home'>Home</SideNavItem>
+      <SideNavItem href='/about' icon='announcement'>About Us</SideNavItem>
       <SideNavItem divider />
       <SideNavItem subheader>Subheader</SideNavItem>
       <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
     </SideNav>
-
 
   )
 }

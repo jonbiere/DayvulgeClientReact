@@ -10,7 +10,9 @@ export class About extends React.Component {
   constructor(props){
     super(props)
     const { } = props
+
   }
+
 
   render(){
     return (
@@ -19,33 +21,7 @@ export class About extends React.Component {
       <div id="carousel-text">
         <h1>Write your own History</h1>
       </div>
-      <img class="carousel-image" src="images/img1.jpg" />
-      <img class="carousel-image" src="images/img2.jpg" />
-      <img class="carousel-image" src="images/img3.jpg" />
-      <img class="carousel-image" src="images/img4.jpg" />
-      <img class="carousel-image" src="images/img5.jpg" />
-      <img class="carousel-image" src="images/img6.jpg" />
-      <img class="carousel-image" src="images/img7.jpg" />
-      <img class="carousel-image" src="images/img8.jpg" />
-      <img class="carousel-image" src="images/img9.jpg" />
-      <img class="carousel-image" src="images/img10.jpg" />
-      <img class="carousel-image" src="images/img11.jpg" />
-      <img class="carousel-image" src="images/img12.jpg" />
-      <img class="carousel-image" src="images/img13.jpg" />
-      <img class="carousel-image" src="images/img14.jpg" />
-      <img class="carousel-image" src="images/img15.jpg" />
-      <img class="carousel-image" src="images/img16.jpg" />
-      <img class="carousel-image" src="images/img17.jpg" />
-      <img class="carousel-image" src="images/img18.jpg" />
-      <img class="carousel-image" src="images/img19.jpg" />
-      <img class="carousel-image" src="images/img20.jpg" />
-      <img class="carousel-image" src="images/img21.jpg" />
-      <img class="carousel-image" src="images/img22.jpg" />
-      <img class="carousel-image" src="images/img23.jpg" />
-      <img class="carousel-image" src="images/img24.jpg" />
-      <img class="carousel-image" src="images/img25.jpg" />
-      <img class="carousel-image" src="images/img26.jpg" />
-      <img class="carousel-image" src="images/img27.jpg" />
+      <img className="carousel-image" src="images/img3.jpg" />
     </section>
 
     <section id="about">
@@ -71,6 +47,13 @@ export class About extends React.Component {
         This is your life. Decide what is important - what makes today worth remembering. And write your own history.
         </p>
       </div>
+    </section>
+
+    <section id="carousel">
+      <div id="carousel-text">
+        <h1>Make Today Worth Remembering</h1>
+      </div>
+      <img className="carousel-image" src="images/img6.jpg" />
     </section>
     </div>
     )

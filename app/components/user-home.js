@@ -14,19 +14,8 @@ export const UserHome = (props) => {
 
   return (
     <div>
-      <SideNav
-        trigger={<Button><i className="material-icons">reorder</i></Button>}
-        options={{ closeOnClick: true }}>
-        <SideNavItem href='#!icon' icon='home'>First Link With Icon</SideNavItem>
-        <SideNavItem href='/about'>Second Link</SideNavItem>
-        <SideNavItem divider />
-        <SideNavItem subheader>Subheader</SideNavItem>
-        <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
-      </SideNav>
 
-      <NavLink
-        to="/about"
-      >About</NavLink>
+      <NavLink to="/about">About</NavLink>
 
       <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
       <ul className="timeline timeline-centered">
