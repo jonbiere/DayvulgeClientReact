@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import { Link, NavLink } from 'react-router-dom'
+import { FlatButton } from 'material-ui'
 import { SideNav, Button, SideNavItem } from 'react-materialize';
 
 /**
@@ -9,27 +11,20 @@ import { SideNav, Button, SideNavItem } from 'react-materialize';
 export const UserHome = (props) => {
   const { email, vulges } = props
 
+
   return (
     <div>
-      <SideNav
-        trigger={<Button><i className="material-icons">reorder</i></Button>}
-        options={{ closeOnClick: true }}>
-        <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
-        <SideNavItem href='#!second'>Second Link</SideNavItem>
-        <SideNavItem divider />
-        <SideNavItem subheader>Subheader</SideNavItem>
-        <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
-      </SideNav>
 
+      <NavLink to="/about">About</NavLink>
 
-    <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+      <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
       <ul className="timeline timeline-centered">
 
         {vulges.map(function(post){
             return (
             <li className="timeline-item">
                 <div className="timeline-info">
-                    <span>{post.date || 'March 12, 2016'}</span>
+                    <span>{post.createdAt || 'March 12, 2016'}</span>
                 </div>
                 <div className="timeline-marker"></div>
 
@@ -68,7 +63,7 @@ export const UserHome = (props) => {
 const mapState = (state) => {
   return {
     email: state.user.email,
-    vulges: state.vulgeHistory
+    vulges: state.vulgeHistory,
   }
 }
 

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../reducers/user'
 import { Navbar, NavItem, Icon, Button } from 'react-materialize';
+import { HiddenNav } from './index.js'
 
 /**
  * COMPONENT
@@ -19,13 +20,11 @@ const Main = (props) => {
       <Navbar brand="logo" right>
         {
           isLoggedIn
-            ?
-            <div className="loggedin-nav-btns">
+          ?
+          <div className="loggedin-nav-btns">
               {/* The navbar will show these links after you log in */}
-              <NavItem><Icon>move_to_inbox</Icon></NavItem>
-              <NavItem><Icon>view_module</Icon></NavItem>
-              <NavItem onClick={logout}><Icon>refresh</Icon></NavItem>
-              <NavItem><Icon>more_vert</Icon></NavItem>
+              <NavItem><HiddenNav /></NavItem>
+
             </div>
             : <div className="login-signup">
               {/* The navbar will show these links before you log in */}
@@ -36,7 +35,7 @@ const Main = (props) => {
               <div className="signup-button">
                 <Link to='/signup'>Sign Up</Link>
               </div>
-              
+
             </div>
         }
       </Navbar>
@@ -50,7 +49,8 @@ const Main = (props) => {
  */
 const mapState = (state) => {
   return {
-    isLoggedIn: !!state.user.id
+    // isLoggedIn: !!state.user.id
+    isLoggedIn: true
   }
 }
 

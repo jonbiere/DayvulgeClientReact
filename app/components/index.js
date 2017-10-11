@@ -5,4 +5,6 @@
  */
 export {default as Main} from './main'
 export {default as UserHome} from './user-home'
+export { About } from './about'
+export { HiddenNav } from './hiddenNav'
 export {Login, Signup} from './auth-form'
