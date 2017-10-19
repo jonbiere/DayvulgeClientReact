@@ -1,10 +1,13 @@
 import React from 'react';
+import { Row, Col, Collapsible, CollapsibleItem } from 'react-materialize';
+
 
 
 export const Timeline = (props) => {
     const { events } = props
     return (
-    <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+    <Row>
+    <Col offset="s1" s={10}>
     <ul className="timeline timeline-centered">
 
     {events.map(function(post){
@@ -36,5 +39,7 @@ export const Timeline = (props) => {
         </li> */
     }
     </ul>
-    </div>)
+    </Col>
+    </Row>
+)
 }

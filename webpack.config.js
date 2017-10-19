@@ -15,7 +15,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
    
      // the entry point of our app
-    './app/root.js',
+    './app/app.js',
    
   ],
 

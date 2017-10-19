@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../reducers/user'
-import { Navbar, NavItem, Icon, Button } from 'react-materialize';
+import { SideNav, Button, SideNavItem, Navbar, NavItem, Icon } from 'react-materialize';
 
 /**
  * COMPONENT
@@ -16,7 +16,18 @@ const Main = (props) => {
 
   return (
     <div>
-      <Navbar brand="logo" right>
+      <Navbar brand="logo" left>
+        <NavItem>
+            <SideNav
+            trigger={<Button><i className="material-icons">reorder</i></Button>}
+              options={{ closeOnClick: true }}>
+              <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
+              <SideNavItem href='#!second'>Second Link</SideNavItem>
+              <SideNavItem divider />
+              <SideNavItem subheader>Subheader</SideNavItem>
+              <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
+            </SideNav>
+        </NavItem>      
         {
           isLoggedIn
             ?
