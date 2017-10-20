@@ -15,7 +15,6 @@ export const UserHome = (props) => {
 
   return (
     <div>
-      <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
       <ul className="timeline timeline-centered">
 
         {vulges.map(function(post){
@@ -48,8 +47,6 @@ export const UserHome = (props) => {
 
 
       </ul>
-    </div>
-
   </div>
 
   )

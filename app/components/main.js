@@ -23,7 +23,7 @@ const Main = (props) => {
           ?
           <div className="loggedin-nav-btns">
               {/* The navbar will show these links after you log in */}
-              <NavItem><HiddenNav /></NavItem>
+              <NavItem><HiddenNav logout={logout} /></NavItem>
 
             </div>
             : <div className="login-signup">
@@ -49,8 +49,7 @@ const Main = (props) => {
  */
 const mapState = (state) => {
   return {
-    // isLoggedIn: !!state.user.id
-    isLoggedIn: true
+    isLoggedIn: !!state.user.id
   }
 }
 

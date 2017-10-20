@@ -5,7 +5,7 @@ import { SideNav, Button, SideNavItem, Icon } from 'react-materialize';
  * COMPONENT
  */
 export const HiddenNav = (props) => {
-  const { email } = props
+  const { email, logout } = props
 
   return (
     <SideNav
@@ -14,6 +14,7 @@ export const HiddenNav = (props) => {
 
       <SideNavItem href='/' icon='home'>Home</SideNavItem>
       <SideNavItem href='/about' icon='announcement'>About Us</SideNavItem>
+      <SideNavItem onClick={logout} icon='logout'>Logout</SideNavItem>
       <SideNavItem divider />
       <SideNavItem subheader>Subheader</SideNavItem>
       <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>

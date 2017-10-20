@@ -43,7 +43,7 @@ export const auth = (name, email, password, method) =>
 
 export const logout = () =>
   (dispatch) =>
-    axios.post(`${BaseApiUrl}/auth/logout`, {withCredentials: true})
+    axios.get(`${BaseApiUrl}/auth/logout`, {withCredentials: true})
       .then(res => {
         dispatch(removeUser());
         history.push('/')
