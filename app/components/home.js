@@ -4,51 +4,20 @@ import {connect} from 'react-redux';
 import { Link, NavLink } from 'react-router-dom'
 import { FlatButton } from 'material-ui'
 import { SideNav, Button, SideNavItem } from 'react-materialize';
-import { Modal } from './index'
+import { Modal, Timeline } from './index';
 
 /**
  * COMPONENT
  */
-export const UserHome = (props) => {
-  const { email, vulges } = props
+export const Home = (props) => {
+  const { email, vulges } = props;
 
 
   return (
-    <div>
-      <ul className="timeline timeline-centered">
-
-        {vulges.map(function(post){
-            return (
-            <li className="timeline-item">
-                <div className="timeline-info">
-                    <span>{post.createdAt || 'March 12, 2016'}</span>
-                </div>
-                <div className="timeline-marker"></div>
-
-                <div className="timeline-content">
-                    <h5 className="timeline-title">{<Modal post={post}/>}</h5>
-                    <p>{post.content}</p>
-                    <p>Up Votes: {post.upVotes}</p>
-                    <p>Down Votes: {post.downVotes}</p>
-                </div>
-            </li>
-            )
-        })}
-
-        {/* This 'timeline-item-period is for big BREAKS in timeline with large date. SAVE FOR IMPLEMENTING LATER! */}
-
-        {/* <li className="timeline-item period">
-            <div className="timeline-info"></div>
-            <div className="timeline-marker"></div>
-            <div className="timeline-content">
-                <h2 className="timeline-title">April 2016</h2>
-            </div>
-        </li> */}
-
-
-      </ul>
-  </div>
-
+    <div className='homeContainer'>
+      <div>Timeline selector placeholder...</div>
+      <Timeline events={vulges}></Timeline>
+    </div>
   )
 }
 
@@ -63,11 +32,11 @@ const mapState = (state) => {
 }
 
 
-export default connect(mapState)(UserHome)
+export default connect(mapState)(Home)
 
 /**
  * PROP TYPES
  */
-UserHome.propTypes = {
+Home.propTypes = {
   email: PropTypes.string
 }

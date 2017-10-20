@@ -40,6 +40,7 @@ const Main = (props) => {
         }
       </Navbar>
       {children}
+      <div>Footer...</div>
     </div>
   )
 }
