@@ -66,7 +66,7 @@ export const logout = () =>
       .then(res => {
         localStorage.removeItem('auth_token');
         dispatch(removeUser());
-        history.push('/login')
+        //history.push('/login')
       })
       .catch(err => console.log(err))
 

@@ -1,0 +1,16 @@
+.mainContainer{
+    .profileDropdown{
+        .right{
+            margin-left: 0px;
+        }
+    }
+    .hoverStyleMenuItem{
+        padding:0em .5em;
+        &:hover{
+            background-color: rgba(0,0,0,0.1);
+                i{
+                        color: #ff9a9a;
+                }
+        }
+    }
+}

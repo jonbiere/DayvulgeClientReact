@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../reducers/user'
-import { Navbar, NavItem, Icon, Button } from 'react-materialize';
+import { Navbar, NavItem, Icon, Button, Dropdown, Badge } from 'react-materialize';
 import { HiddenNav } from './index.js'
 
 /**
@@ -13,30 +13,39 @@ import { HiddenNav } from './index.js'
  *  rendered out by the component's `children`.
  */
 const Main = (props) => {
-  const {children, logout, isLoggedIn} = props
+  const {children, logout, user, isLoggedIn} = props;
 
   return (
-    <div>
-      <Navbar brand="logo" right>
-        {
-          isLoggedIn
-          ?
-          <div className="loggedin-nav-btns">
-              {/* The navbar will show these links after you log in */}
-              <NavItem><HiddenNav logout={logout} /></NavItem>
+    <div className="mainContainer">
+      <Navbar brand="logo" right>    
+        {isLoggedIn && <NavItem>
+          <Dropdown
+            trigger={
+              <NavItem className="hoverStyleMenuItem profileDropdown">
+                <span>{user.email}<Icon right>arrow_drop_down</Icon></span>
+              </NavItem>
+            }>
+            <NavItem>
+              Profile  
+            </NavItem>
 
-            </div>
-            : <div className="login-signup">
-              {/* The navbar will show these links before you log in */}
-              <div className="login-button">
-                <Link to='/login'>Login</Link>
-              </div>
-              <div className="signup-button">
-                <Link to='/signup'>Sign Up</Link>
-              </div>
+            <NavItem onClick={logout}>
+              Logout
+            </NavItem>
+          </Dropdown>
+        </NavItem>}
 
-            </div>
-        }
+        {!isLoggedIn && <NavItem>
+        <div className="login-button">
+          <Link to='/login'>Login</Link>
+        </div>
+        </NavItem>}
+        {!isLoggedIn && <NavItem>
+          <div className="signup-button">
+            <Link to='/signup'>Sign Up</Link>
+          </div>
+        </NavItem>}
+        <NavItem><HiddenNav/></NavItem>   
       </Navbar>
       {children}
       <div>Footer...</div>
@@ -49,7 +58,8 @@ const Main = (props) => {
  */
 const mapState = (state) => {
   return {
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
+    user: state.user
   }
 }
 
@@ -70,6 +80,7 @@ export default withRouter(connect(mapState, mapDispatch)(Main))
  */
 Main.propTypes = {
   children: PropTypes.object,
+  user: PropTypes.object,
   logout: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
 }
