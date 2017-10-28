@@ -9,5 +9,5 @@ export { default as Modal } from './postModal'
 export { About } from './about'
 export { HiddenNav } from './hiddenNav'
 export { default as Timeline } from './timeline'
-export {Login, Signup} from './auth-form'
+export {Login, Signup} from './authForm'
 

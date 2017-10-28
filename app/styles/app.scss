@@ -132,14 +132,6 @@
     height: auto;
   }
 
-
-
-.login-signup {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-left
-}
-
 .container {
   display: flex;
   flex-direction: row;
@@ -154,40 +146,6 @@
   justify-content: space-around;
   border-color: grey;
 }
-
-.login-button {
-  order: 1;
-  justify-content: space-around
-
-}
-
-.or {
-  order: 2;
-  justify-content: space-around
-}
-
-.signup-button {
-  order: 3;
-  justify-content: space-around
-}
-
-.submit-button-form {
-  display: flex;
-  justify-content: center;
-}
-
-.welcome-log-in {
-  display: flex;
-  justify-content: center;
-}
-
-.login-fields {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding-top: 50px;
-}
-
 .topics {
   display: flex;
   flex-direction: row;

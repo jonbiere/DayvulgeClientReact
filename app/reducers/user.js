@@ -20,33 +20,53 @@ const defaultUser = {}
 const getUser = (user) => ({type: GET_USER, user})
 const removeUser = () => ({type: REMOVE_USER})
 
+
+let setHeadersAndLocalStorage= (token) => {
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  localStorage.setItem('auth_token', token);
+}
+
 /**
  * THUNK CREATORS
  */
 export const me = () =>
   (dispatch) =>
-    axios.get(`${BaseApiUrl}/auth/me`, {withCredentials: true})
+    axios.get(`${BaseApiUrl}/auth/me`)
       .then(res =>{
-        dispatch(getUser(res.data || defaultUser))
+        dispatch(getUser(res.data || defaultUser));
       })    
       .catch(err => console.log(err))
 
-export const auth = (name, email, password, method) =>
+export const auth = (email, password, method) =>
   (dispatch) =>
-    axios.post(`${BaseApiUrl}/auth/${method}`, { name, email, password })
+    axios.post(`${BaseApiUrl}/auth/${method}`, { email, password })
       .then(res => {
-        dispatch(getUser(res.data));
-        history.push('/home')
+        setHeadersAndLocalStorage(res.data.token);
+        dispatch(getUser(res.data.user));
+        history.push('/');
       })
-      .catch(error =>
-        dispatch(getUser({error})))
+      .catch((error) => {
+        error = error.response && error.response.data;
+        dispatch(getUser({error}))
+        //history.push('/');
+      });
+
+export const authProvider = (providerName, providerToken) => 
+(dispatch) =>
+    axios.post(`${BaseApiUrl}/auth/${providerName}`, {token: providerToken})
+      .then((res) =>{
+        setHeadersAndLocalStorage(res.data.token);
+        dispatch(getUser(res.data.user));
+        history.push('/');
+      });
 
 export const logout = () =>
   (dispatch) =>
-    axios.get(`${BaseApiUrl}/auth/logout`, {withCredentials: true})
+    axios.get(`${BaseApiUrl}/auth/logout`)
       .then(res => {
+        localStorage.removeItem('auth_token');
         dispatch(removeUser());
-        history.push('/')
+        history.push('/login')
       })
       .catch(err => console.log(err))
 
