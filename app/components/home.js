@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { Link, NavLink } from 'react-router-dom'
 import { FlatButton } from 'material-ui'
-import { SideNav, Button, SideNavItem } from 'react-materialize';
+import { SideNav, Button, SideNavItem, Tabs, Tab } from 'react-materialize';
 import { Modal, Timeline } from './index';
 
 /**
@@ -15,8 +15,21 @@ export const Home = (props) => {
 
   return (
     <div className='homeContainer'>
-      <div>Timeline selector placeholder...</div>
-      <Timeline events={vulges}></Timeline>
+      {/* <div>Timeline selector placeholder...</div> */}
+      <Tabs className='tab-demo z-depth-1'>
+        <Tab title="Test 1" active>
+          <Timeline events={vulges}></Timeline>
+        </Tab>
+        <Tab title="Test 2">
+          <h1>A tab!</h1>
+        </Tab>
+        <Tab title="Test 3">
+          <Timeline events={vulges}></Timeline>
+        </Tab>
+        <Tab title="Test 4">
+          <h1>Another one!!</h1>
+        </Tab>
+      </Tabs>
     </div>
   )
 }
