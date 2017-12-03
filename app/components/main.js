@@ -17,7 +17,7 @@ const Main = (props) => {
 
   return (
     <div className="mainContainer">
-      <Navbar brand="logo" right>    
+      <Navbar brand="logo" right>
         {isLoggedIn && <NavItem>
           <Dropdown
             trigger={
@@ -26,7 +26,7 @@ const Main = (props) => {
               </NavItem>
             }>
             <NavItem>
-              Profile  
+              Profile
             </NavItem>
 
             <NavItem onClick={logout}>
@@ -45,7 +45,7 @@ const Main = (props) => {
             <Link to='/signup'>Sign Up</Link>
           </div>
         </NavItem>}
-        <NavItem><HiddenNav/></NavItem>   
+        <NavItem><HiddenNav/></NavItem>
       </Navbar>
       {children}
       <div>Footer...</div>
