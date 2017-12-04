@@ -10,4 +10,5 @@ export { About } from './about'
 export { HiddenNav } from './hiddenNav'
 export { default as Timeline } from './timeline'
 export {Login, Signup} from './authForm'
+export { default as PersonalTimeline } from './personalTimeline'
 

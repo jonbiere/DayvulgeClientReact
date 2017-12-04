@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { Link, NavLink } from 'react-router-dom'
 import { FlatButton } from 'material-ui'
 import { SideNav, Button, SideNavItem } from 'react-materialize';
-import { Modal, Timeline } from './index';
+import { Modal, Timeline, PersonalTimeline } from './index';
 import { List, Label, Tab } from 'semantic-ui-react'
 
 /*
@@ -33,13 +33,19 @@ export const Home = (props) => {
   with different content, or whatever we want really.
   */
   const panes = [
-    { menuItem: 'Tab 1', pane: { key: 'tab1', content: <Timeline events={vulges}></Timeline> } },
-    { menuItem: 'Tab 2', pane: { key: 'tab2',
+    { menuItem: 'Personal', pane: { key: 'tab1',
+      content:
+      <PersonalTimeline events={vulges}></PersonalTimeline> } },
+
+    { menuItem: 'Cat', pane: { key: 'tab2',
       content:
       <img src="http://78.media.tumblr.com/5d933dbea55d887f28bb467c67bcb356/tumblr_mojk1em3ew1r4xjo2o1_500.gif" />,
       textAlign: 'center' } },
-    { menuItem: 'Tab 3', pane: { key: 'tab3', content: <Timeline events={vulges}></Timeline> } },
-    { menuItem: 'Tab 4',
+
+    { menuItem: 'Global', pane: { key: 'tab3',
+      content:
+      <Timeline events={vulges}></Timeline> } },
+    { menuItem: 'Stuff',
       pane: (
         <Tab.Pane key='tab4'>
           <p>This tab has a complex content</p>

@@ -3,7 +3,7 @@ import { Modal } from './index'
 
 const Timeline = (props) => {
     const {events} = props;
-    
+
   return (
     <div className="timelineContainer">
         <ul className="timeline timeline-centered">
